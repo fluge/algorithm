@@ -1,5 +1,5 @@
 .dockerignore
-.idea/
+.idea/*
 .med/
 .DS_Store
 cmd/.DS_Store
