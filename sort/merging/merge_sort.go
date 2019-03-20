@@ -19,22 +19,20 @@ func SortMerge(data []int) []int {
 
 //对两个数据做合并动作
 func merge(left, right []int) []int {
-	//用空间换时间,建立新的数组
+	//用空间换时间,建立新的数组，不是就地排序
 	result := make([]int, 0)
 	i, j := 0, 0
 	// 左右两个数组进行合并
 	for i < len(left) && j < len(right) {
 		if left[i] > right[j] {
 			result = append(result, right[j])
-			//因为处理了右边的第j个元素，所以j的指针要向前移动一个单位
 			j++
 		} else {
 			result = append(result, left[i])
-			//因为处理了左边的第i个元素，所以i的指针要向前移动一个单位
 			i++
 		}
 	}
-	//对两边数组的结尾进行处理，left和right 中有一个是o，直接进行append
+	//对两边数组的结尾进行处理，left和right 中有一个是0，直接进行append
 	result = append(result, left[i:]...)
 	result = append(result, right[j:]...)
 	return result
