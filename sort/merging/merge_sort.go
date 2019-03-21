@@ -2,8 +2,10 @@ package merging
 
 /*
 归并排序，主要采用分治法去处理
-*/
 
+稳定排序  O(nlog n) 不是原地排序 O(n)
+*/
+//递归的方式
 func SortMerge(data []int) []int {
 	if len(data) <= 1 {
 		return data
@@ -37,3 +39,5 @@ func merge(left, right []int) []int {
 	result = append(result, right[j:]...)
 	return result
 }
+
+//todo 非递归的方式
