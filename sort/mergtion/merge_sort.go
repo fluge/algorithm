@@ -1,4 +1,4 @@
-package merging
+package mergtion
 
 /*
 归并排序，主要采用分治法去处理
@@ -40,4 +40,6 @@ func merge(left, right []int) []int {
 	return result
 }
 
-//todo 非递归的方式
+//todo k路归并和优先级队列
+
+//数组的优先级队列

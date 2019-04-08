@@ -1,4 +1,4 @@
-package merging
+package mergtion
 
 import (
 	"fmt"
