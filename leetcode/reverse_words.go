@@ -9,24 +9,21 @@ func ReverseWords(s string) string {
 	//强制加一个_字符串 减少判断
 	s = " " + s
 	str := ""
-	start := len(s)
 	end := len(s)
 	for i := len(s) - 1; i >= 0; i-- {
 		//如果遇到空格
 		if string(s[i]) == " " {
 			//做str 处理
-			if start != end {
+			if i+1 != end {
 				if str == "" {
-					str = s[start:end]
+					str = s[i+1 : end]
 				} else {
-					str = str + " " + s[start:end]
+					str = str + " " + s[i+1:end]
 				}
 			}
 			//移动两个指针在一起
-			start = i
-			end = start
+			end = i
 		}
-		start = i
 	}
 	return str
 }
