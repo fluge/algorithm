@@ -20,7 +20,6 @@ func LengthOfLongestSubstring(s string) int {
 			if start <= value {
 				start = value + 1
 			}
-
 		}
 		strMap[v] = k
 		if k-start > max {

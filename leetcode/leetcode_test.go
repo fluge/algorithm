@@ -26,3 +26,11 @@ func TestLongestCommonPrefix(t *testing.T) {
 	str := []string{"aa", "a", "aaa"}
 	fmt.Println(LongestCommonPrefix(str))
 }
+
+func TestCheckInclusion(t *testing.T) {
+	fmt.Println(CheckInclusion("ab", "ab"))
+}
+
+func TestReverseWords(t *testing.T) {
+	fmt.Println(ReverseWords("hello   the   world   "))
+}
