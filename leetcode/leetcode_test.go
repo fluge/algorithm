@@ -34,3 +34,20 @@ func TestCheckInclusion(t *testing.T) {
 func TestReverseWords(t *testing.T) {
 	fmt.Println(ReverseWords("hello   the   world   "))
 }
+
+func TestSimplifyPath(t *testing.T) {
+	fmt.Println(SimplifyPath("/home/"))
+	fmt.Println(SimplifyPath("/../"))
+	fmt.Println(SimplifyPath("/home//foo/"))
+	fmt.Println(SimplifyPath("/a/./b/../../c/"))
+	fmt.Println(SimplifyPath("/a/../../b/../c//.//"))
+	fmt.Println(SimplifyPath("/a//b////c/d//././/.."))
+}
+
+func TestRestoreIpAddresses(t *testing.T) {
+	fmt.Println(RestoreIpAddresses("25525511135"))
+}
+
+func TestThreeSum(t *testing.T) {
+	fmt.Println(ThreeSum([]int{0, 0, 0}))
+}
