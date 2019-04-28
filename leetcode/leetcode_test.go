@@ -51,3 +51,89 @@ func TestRestoreIpAddresses(t *testing.T) {
 func TestThreeSum(t *testing.T) {
 	fmt.Println(ThreeSum([]int{0, 0, 0}))
 }
+
+func TestMaxAreaOfIsland(t *testing.T) {
+	fmt.Println(MaxAreaOfIsland([][]int{
+		[]int{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+		[]int{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		[]int{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+		[]int{0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+		[]int{0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+		[]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+		[]int{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+		[]int{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+	}))
+}
+
+func TestSearch(t *testing.T) {
+	fmt.Println(Search([]int{4, 5, 6, 7, 0, 1, 2}, 0))
+}
+
+func TestLevelOrder(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 4,
+			},
+			Right: &TreeNode{
+				Val: 5,
+				Left: &TreeNode{
+					Val: 7,
+				},
+				Right: &TreeNode{
+					Val: 8,
+				},
+			},
+		},
+		Right: &TreeNode{
+			Val: 3,
+			Right: &TreeNode{
+				Val: 6,
+				Left: &TreeNode{
+					Val: 9,
+				},
+				Right: &TreeNode{
+					Val: 10,
+				},
+			},
+		},
+	}
+	fmt.Println(LevelOrder(root))
+	root1 := &TreeNode{
+		Val: 3,
+		Left: &TreeNode{
+			Val: 9,
+		},
+		Right: &TreeNode{
+			Val: 20,
+			Right: &TreeNode{
+				Val: 15,
+			},
+			Left: &TreeNode{
+				Val: 7,
+			},
+		},
+	}
+	fmt.Println(LevelOrder(root1))
+}
+
+func TestZigzagLevelOrder(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 4,
+			},
+		},
+		Right: &TreeNode{
+			Val: 3,
+			Right: &TreeNode{
+				Val: 5,
+			},
+		},
+	}
+	fmt.Println(ZigzagLevelOrder(root))
+}

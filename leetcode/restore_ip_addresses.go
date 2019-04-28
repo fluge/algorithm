@@ -45,10 +45,10 @@ func restore(s string, require int) []string {
 			break
 		}
 	}
-	fmt.Println("r:", r)
 	return r
 }
 
+//另一种解法
 func restoreIpAddresses(s string) []string {
 	var res []string
 	findIp(s, 0, 0, "", &res)
