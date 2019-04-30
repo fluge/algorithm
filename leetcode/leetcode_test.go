@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"encoding/json"
 	"fmt"
 	"testing"
 )
@@ -136,4 +137,46 @@ func TestZigzagLevelOrder(t *testing.T) {
 		},
 	}
 	fmt.Println(ZigzagLevelOrder(root))
+}
+
+func TestInvertTree(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 4,
+			},
+		},
+		Right: &TreeNode{
+			Val: 3,
+			Right: &TreeNode{
+				Val: 5,
+			},
+		},
+	}
+
+	s := InvertTree2(root)
+	str, _ := json.Marshal(s)
+	fmt.Println(string(str))
+}
+
+func TestMaxDepth(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 4,
+			},
+		},
+		Right: &TreeNode{
+			Val: 3,
+			Right: &TreeNode{
+				Val: 5,
+			},
+		},
+	}
+	fmt.Println(MaxDepth(root))
+	fmt.Println(MaxDepth2(root))
 }
