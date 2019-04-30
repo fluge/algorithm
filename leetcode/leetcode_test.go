@@ -180,3 +180,27 @@ func TestMaxDepth(t *testing.T) {
 	fmt.Println(MaxDepth(root))
 	fmt.Println(MaxDepth2(root))
 }
+func TestInorderTraversal(t *testing.T) {
+	root := &TreeNode{
+		Val: 1,
+		Left: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val: 4,
+			},
+		},
+		Right: &TreeNode{
+			Val: 3,
+			Right: &TreeNode{
+				Val: 5,
+			},
+		},
+	}
+	fmt.Println(InOrderTraversal(root))
+	fmt.Println(InOrderTraversal2(root))
+
+	fmt.Println(PreOrderTraversal(root))
+	fmt.Println(PreOrderTraversal2(root))
+
+	fmt.Println(PostOrderTraversal(root))
+}
