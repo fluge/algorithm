@@ -19,7 +19,7 @@ package leetcode
 平衡二叉树：任意一个节点的值都不小于它的左子树上任一节点的值，任意一个节点的值不大于它的右子树上任一节点的值。
 */
 
-func sortedArrayToBST(nums []int) *TreeNode {
+func SortedArrayToBST(nums []int) *TreeNode {
 	return dfs(nums, 0, len(nums)-1)
 }
 

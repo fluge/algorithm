@@ -20,22 +20,7 @@ package leetcode
      3     2     1      1   3      2
     /     /       \                 \
    2     1         2                 3
-
-
-
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
 */
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
 
 //func generateTrees(n int) []*TreeNode {
 //	//构建一个arr

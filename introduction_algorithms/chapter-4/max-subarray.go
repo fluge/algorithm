@@ -1,16 +1,12 @@
 package chapter_4
 
-import "fmt"
+import (
+	"github.com/fluge/algorithm/leetcode"
+)
 
 /*
 最大子数组
 */
-
-const MaxUint = ^uint(0)
-const MaxInt = int(MaxUint >> 1)
-
-//主要还是golang中最小int 的定义
-const MinInt = -MaxInt - 1
 
 //使用分治法 时间复杂读为 O(n*log n)
 func FindMaximumSubArray(A []int, low, high int) (arrLow, arrHigh, arrSum int) {
@@ -32,12 +28,11 @@ func FindMaximumSubArray(A []int, low, high int) (arrLow, arrHigh, arrSum int) {
 	} else if rightSum >= leftSum && rightSum >= corssSum {
 		return rightLow, rightHigh, rightSum
 	}
-	fmt.Println("返回结果", corssLow, corssHigh, corssSum)
 	return corssLow, corssHigh, corssSum
 }
 
 func findMaximumCorssSubArray(A []int, low, mid, high int) (arrLow, arrHigh, arrSum int) {
-	leftSum := MinInt
+	leftSum := leetcode.MinInt
 	sum := 0
 	for i := mid; i >= low; i-- {
 		sum = sum + A[i]
@@ -47,7 +42,7 @@ func findMaximumCorssSubArray(A []int, low, mid, high int) (arrLow, arrHigh, arr
 		}
 	}
 
-	rightSum := MinInt
+	rightSum := leetcode.MinInt
 	sum = 0
 	for i := mid + 1; i <= high; i++ {
 		sum = sum + A[i]
@@ -56,7 +51,5 @@ func findMaximumCorssSubArray(A []int, low, mid, high int) (arrLow, arrHigh, arr
 			arrHigh = i
 		}
 	}
-	fmt.Println("和输入：", A, low, mid, high)
-	fmt.Println("和结果：", arrLow, arrHigh, leftSum+rightSum)
 	return arrLow, arrHigh, leftSum + rightSum
 }

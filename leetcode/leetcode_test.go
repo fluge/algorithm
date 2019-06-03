@@ -202,5 +202,65 @@ func TestInorderTraversal(t *testing.T) {
 	fmt.Println(PreOrderTraversal(root))
 	fmt.Println(PreOrderTraversal2(root))
 
-	fmt.Println(PostOrderTraversal(root))
+	fmt.Println("后序：", PostOrderTraversal(root))
+	fmt.Println("后序：", PostOrderTraversal2(root))
+
+	fmt.Println(IsValidBST(root))
+	fmt.Println(IsValidBST2(root))
+}
+
+func TestBuildTree(t *testing.T) {
+	inO := []int{9, 3, 15, 20, 7}
+	postO := []int{9, 15, 7, 20, 3}
+	fmt.Println(BuildTree2(inO, postO))
+}
+
+func TestSortedListToBST(t *testing.T) {
+	root := &ListNode{
+		Val: -10,
+		Next: &ListNode{
+			Val: -3,
+			Next: &ListNode{
+				Val: 0,
+				Next: &ListNode{
+					Val: 1,
+					Next: &ListNode{
+						Val: 10,
+					},
+				},
+			},
+		},
+	}
+	fmt.Println(SortedListToBST(root))
+}
+
+func TestSearchMatrix(t *testing.T) {
+	res := [][]int{
+		{1, 4, 7, 11, 15},
+		{2, 5, 8, 12, 19},
+		{3, 6, 9, 16, 22},
+		{10, 13, 14, 17, 24},
+		{18, 21, 23, 26, 30},
+	}
+	fmt.Println(SearchMatrix(res, 5))
+}
+
+func TestFindLengthOfLCIS(t *testing.T) {
+	//fmt.Println(FindLengthOfLCIS([]int{1, 3, 5, 4, 7, 8, 9, 10}))
+	//fmt.Println(FindLengthOfLCIS([]int{2, 2, 2, 2}))
+	//fmt.Println(FindLengthOfLCIS([]int{1, 3, 5, 4, 2, 3, 4, 5}))
+
+	fmt.Println(LongestConsecutive([]int{100, 4, 200, 1, 3, 2}))
+
+	fmt.Println(LongestConsecutive([]int{-6, -1, -1, 9, -8, -6, -6, 4, 4, -3, -8, -1}))
+
+	fmt.Println(findKthLargest([]int{3, 2, 1, 5, 6, 4}, 2))
+	fmt.Println(findKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4))
+
+}
+
+func TestSubSets(t *testing.T) {
+	fmt.Println(SubSets([]int{1, 2, 3}))
+	fmt.Println(SubSets([]int{1, 2, 2}))
+
 }

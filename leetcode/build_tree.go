@@ -19,7 +19,7 @@ package leetcode
 */
 
 //递归实现
-func buildTree(preorder []int, inorder []int) *TreeNode {
+func BuildTree(preorder []int, inorder []int) *TreeNode {
 	//使用前序找根节点，然后通过中序找左右节点
 	if len(preorder) == 0 {
 		return nil
@@ -35,7 +35,31 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 			break
 		}
 	}
-	node.Left = buildTree(preorder[1:k+1], inorder[:k])
-	node.Right = buildTree(preorder[k+1:], inorder[k+1:])
+	node.Left = BuildTree(preorder[1:k+1], inorder[:k])
+	node.Right = BuildTree(preorder[k+1:], inorder[k+1:])
+	return node
+}
+
+//根据中序和后序来构造二叉树，原理和前序和中序是一样的。通过后序找根节点
+func BuildTree2(inorder []int, postorder []int) *TreeNode {
+	if len(postorder) == 0 || len(inorder) == 0 {
+		return nil
+	}
+	node := &TreeNode{
+		Val: postorder[len(postorder)-1], //通过后序的最后一个节点找到对应的根节点
+	}
+	if len(postorder) == 1 || len(inorder) == 1 {
+		return node
+	}
+
+	k := 0
+	for i, v := range inorder {
+		if v == postorder[len(postorder)-1] {
+			k = i
+			break
+		}
+	}
+	node.Left = BuildTree2(inorder[:k], postorder[:k])
+	node.Right = BuildTree2(inorder[k+1:], postorder[k:len(postorder)-1])
 	return node
 }

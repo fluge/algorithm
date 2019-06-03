@@ -38,8 +38,6 @@ func InOrderTraversal2(root *TreeNode) []int {
 	}
 	stack := make([]*TreeNode, 0)
 	res := make([]int, 0)
-	//把根节点入栈
-	//stack = append(stack, root)
 	for root != nil || len(stack) > 0 {
 		//把左子树一直入栈
 		for root != nil {
