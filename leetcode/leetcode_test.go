@@ -264,3 +264,133 @@ func TestSubSets(t *testing.T) {
 	fmt.Println(SubSets([]int{1, 2, 2}))
 
 }
+
+func TestAddTwoNumbers(t *testing.T) {
+	node := addTwoNumbers(&ListNode{
+		Val: 9,
+		Next: &ListNode{
+			Val: 1,
+		},
+	}, &ListNode{
+		Val: 9,
+	})
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestMergeTwoLists(t *testing.T) {
+	node := mergeTwoLists(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 7,
+		},
+	}, &ListNode{
+		Val: 2,
+	})
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestRemoveNthFromEnd(t *testing.T) {
+	node := removeNthFromEnd2(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+				Next: &ListNode{
+					Val: 4,
+					Next: &ListNode{
+						Val: 5,
+					},
+				},
+			},
+		},
+	}, 5)
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+
+	node = removeNthFromEnd(&ListNode{
+		Val: 1,
+	}, 1)
+	str, _ = json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestMergeSortList(t *testing.T) {
+	node := mergeSortList(&ListNode{
+		Val: 9,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 6,
+			},
+		},
+	})
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestMergeKLists(t *testing.T) {
+	node := mergeKLists([]*ListNode{
+		&ListNode{
+			Val: 1,
+		},
+		&ListNode{
+			Val: 2,
+		},
+		&ListNode{
+			Val: 3,
+		},
+	})
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestSwapPairs(t *testing.T) {
+	node := swapPairs(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+			},
+		},
+	})
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestRotateRight(t *testing.T) {
+	node := rotateRight(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+			},
+		},
+	}, 1)
+	str, _ := json.Marshal(node)
+	fmt.Println(string(str))
+
+	node = rotateRights(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+			},
+		},
+	}, 1)
+	str, _ = json.Marshal(node)
+	fmt.Println(string(str))
+}
+
+func TestLongestPalindrome(t *testing.T) {
+	fmt.Println(longestPalindrome("ccc"))
+}
+
+func TestMaxArea(t *testing.T) {
+	fmt.Println(maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7}))
+}

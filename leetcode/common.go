@@ -1,5 +1,7 @@
 package leetcode
 
+import "fmt"
+
 const MaxUint = ^uint(0)
 const MaxInt = int(MaxUint >> 1)
 
@@ -17,4 +19,12 @@ type TreeNode struct {
 type ListNode struct {
 	Val  int
 	Next *ListNode
+}
+
+func (l *ListNode) String() {
+	str := ""
+	for l != nil {
+		str = fmt.Sprintf("%s -> %d", str, l.Val)
+		l = l.Next
+	}
 }
